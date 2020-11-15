@@ -1,0 +1,32 @@
+{
+  "name": "simple-tg-bot",
+  "private": true,
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "DEBUG=simple-tg-bot* NODE_ENV=development nodemon .",
+    "debug": "DEBUG=simple-tg-bot* NODE_ENV=development nodemon --inspect=0.0.0.0 .",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sistematico/simple-tg-bot.git"
+  },
+  "author": "Micael Levi L. Cavalcante (https://sistematico.github.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sistematico/simple-tg-bot/issues"
+  },
+  "homepage": "https://github.com/sistematico/simple-tg-bot#readme",
+  "dependencies": {
+    "debug": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "telegraf": "^3.38.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.2"
+  }
+}

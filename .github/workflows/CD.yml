@@ -1,0 +1,29 @@
+name: Continuous deploy
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.js'
+      - '**.json'
+
+env:
+  APP_PATH: ${{ secrets.PROJECT_PATH }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Push to my VPS and install app dependencies
+        uses: ./.github/actions/ssh-action
+        with:
+          # Username for authentication:
+          user: ${{ secrets.SERVER_USER }}
+          # Hostname or IP address of the server:
+          host: ${{ secrets.SERVER_HOST }}
+          # Password for authentication:
+          pass: ${{ secrets.SERVER_PASS }}
+          # Command to execute on the remote server:
+          command: cd ${{env.APP_PATH}} && git pull && npm install
