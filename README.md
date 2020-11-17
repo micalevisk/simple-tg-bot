@@ -35,3 +35,16 @@ npm run dev
 
 npm run format
 ```
+
+## production usage
+
+```bash
+cp .production.deploy.env.example .production.deploy.env
+vim .production.deploy.env # configure your production server
+
+vim pm2.config.js # configure your Git repository
+
+# Make your first deploy and populate the distant path
+npm run deploy setup
+##             ^^^^^ remove this for further deployments
+```

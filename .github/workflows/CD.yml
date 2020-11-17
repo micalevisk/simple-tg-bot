@@ -26,4 +26,4 @@ jobs:
           # Password for authentication:
           pass: ${{ secrets.SERVER_PASS }}
           # Command to execute on the remote server:
-          command: cd ${{env.APP_PATH}} && git pull && npm install
+          command: cd ${{env.APP_PATH}} && git pull && npm i --prod && npm run rs

@@ -3,28 +3,28 @@ description: 'Run remote ssh commands'
 author: 'fifsky@gmail.com'
 inputs:
   command:
-    description: "Command to execute on the remote server."
+    description: 'Command to execute on the remote server.'
     required: true
   host:
-    description: "Hostname or IP address of the server."
+    description: 'Hostname or IP address of the server.'
     required: false
-    default: "localhost"
+    default: 'localhost'
   user:
-    description: "Username for authentication."
+    description: 'Username for authentication.'
     required: false
-    default: "root"
+    default: 'root'
   port:
-    description: "Port number of the server."
+    description: 'Port number of the server.'
     required: false
-    default: "22"
+    default: '22'
   key:
-    description: "File Location or string that contains a private key for either key-based or hostbased user authentication (OpenSSH format)"
+    description: 'File Location or string that contains a private key for either key-based or hostbased user authentication (OpenSSH format)'
     required: true
   pass:
-    description: "Password for authentication."
+    description: 'Password for authentication.'
     required: false
   args:
-    description: "SSH parameters for example: -tt."
+    description: 'SSH parameters for example: -tt.'
     required: false
 
 runs:
@@ -32,5 +32,5 @@ runs:
   image: 'Dockerfile'
 
 branding:
-  color: "green"
-  icon: "lock"
+  color: 'green'
+  icon: 'lock'
