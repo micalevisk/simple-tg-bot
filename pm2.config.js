@@ -22,7 +22,7 @@ module.exports = {
       // ignore_watch: ['node_modules'],
       max_memory_restart: '150M', // (idk what value to use)
       instance_var: 'NODE_BOT_INSTANCE',
-      env: {
+      env_production: {
         NODE_ENV: 'production',
         DEBUG: 'simple-tg-bot:info,simple-tg-bot:error',
       },
