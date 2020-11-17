@@ -1,6 +1,6 @@
 # simple-tg-bot
 
-![CD](https://github.com/sistematico/simple-tg-bot/workflows/Continuous%20delivery/badge.svg?event=push)
+![CD](https://github.com/sistematico/simple-tg-bot/workflows/Continuous%20deploy/badge.svg?event=push)
 
 ## Bot available commands
 
