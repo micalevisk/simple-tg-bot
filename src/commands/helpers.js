@@ -1,6 +1,13 @@
 const fs = require('fs')
 const path = require('path')
 
+/** @param {string} key */
+module.exports.createUniqueTriggerId = (key) => {
+  // (c) http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
+  const randUnique = Math.random().toString(36).substring(2, 15).slice(0, 5)
+  return `${randUnique}:${key}`
+}
+
 /**
  * Interceptor middleware to check wheter or not it should call the next
  * middleware in the chain when the last middleware fail when doing its task.

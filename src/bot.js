@@ -18,6 +18,13 @@ function setupTelegramBot(botToken, commandsOpts) {
 
   bot.use(session)
 
+  // Ignore all pending `callback_query` events.
+  bot.use(async function disposeCallbackQuery(ctx, next) {
+    if (!ctx.callbackQuery) return next()
+    await next()
+    return ctx.answerCbQuery()
+  })
+
   for (const { makeMiddlewareChain, command, optsId } of commands) {
     const commandOpts =
       optsId in commandsOpts ? commandsOpts[optsId] : undefined

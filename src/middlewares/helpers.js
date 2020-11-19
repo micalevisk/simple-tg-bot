@@ -55,15 +55,20 @@ module.exports.getUserMention = (user, parseMode) => {
 module.exports.getChatAdmins = async (ctx) => {
   if (!ctx.session) {
     ctx.session = {
-      chatMembers: undefined,
+      adminChatMembers: undefined,
+      adminChatMembersMentions: undefined,
     }
   }
 
   /** @type {TelegramChatMember[]} */
-  let chatMembers = ctx.session.chatMembers
-  if (!chatMembers) {
-    chatMembers = await ctx.getChatAdministrators(ctx.chat.id)
-    ctx.session.chatMembers = chatMembers
+  let adminChatMembers = ctx.session.adminChatMembers
+  if (!adminChatMembers) {
+    /** @type {TelegramChatMember[]} */
+    const allAdminChatMembers = await ctx.getChatAdministrators(ctx.chat.id)
+    adminChatMembers = allAdminChatMembers.filter(
+      (chatMember) => !chatMember.user.is_bot,
+    )
+    ctx.session.adminChatMembers = adminChatMembers
     debug(
       'admins list has been updated. from_id=%s chat_id=%s',
       ctx.message.from.id,
@@ -71,5 +76,5 @@ module.exports.getChatAdmins = async (ctx) => {
     )
   }
 
-  return chatMembers
+  return adminChatMembers
 }

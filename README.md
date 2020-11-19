@@ -4,10 +4,11 @@
 
 ## Bot available commands
 
-| how                                         | what                                                                                                                                                                                 | who   |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
-| reply some message with `/vaga` or `/vagas` | forwards the replied message to the chat id `CHAT_ID_TO_FORWARD_MESSAGES` (environment variable); reply the 'replied message' with `REPLY_MSG` (env. var.) and delete both messages. | admin |
-| `/radmins`                                  | refreshs chat administrators in memory list, and delete the command message                                                                                                          | admin |
+| how                                         | what                                                                                                                                                                                 | who      |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| reply some message with `/vaga` or `/vagas` | forwards the replied message to the chat id `CHAT_ID_TO_FORWARD_MESSAGES` (environment variable); reply the 'replied message' with `REPLY_MSG` (env. var.) and delete both messages. | admin    |
+| `/radmins`                                  | refreshs chat administrators in memory list, and delete the command message                                                                                                          | admin    |
+| `/admins` or `/admin`                       | list (mentioning) all admin (non-bot) users in the group                                                                                                                             | everyone |
 
 ## setup
 
