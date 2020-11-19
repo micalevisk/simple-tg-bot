@@ -1,5 +1,7 @@
 *.env
 
+logz
+
 # Created by https://www.toptal.com/developers/gitignore/api/vim,node,vscode,windows,macos,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,node,vscode,windows,macos,linux
 
@@ -213,4 +215,3 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,node,vscode,windows,macos,linux
-
