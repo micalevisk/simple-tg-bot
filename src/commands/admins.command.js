@@ -45,13 +45,10 @@ const makeMiddlewareChain = (bot) => {
    * @param {() => Promise<void>} next
    */
   const replyWithAdminsMention = async (ctx, next) => {
-    let adminsMention = ctx.session.adminChatMembersMentions
-    if (!adminsMention) {
-      const adminsMentionList = (await getChatAdmins(ctx)).map((chatMember) =>
-        getUserMention(chatMember.user, 'Markdown'),
-      )
-      adminsMention = adminsMentionList.join('\n') // new-line separated
-    }
+    const adminsMentionList = (await getChatAdmins(ctx)).map((chatMember) =>
+      getUserMention(chatMember.user, 'Markdown'),
+    )
+    const adminsMention = adminsMentionList.join('\n') // new-line separated
 
     ctx.reply(adminsMention, confirmationMenu)
 

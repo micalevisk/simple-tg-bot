@@ -53,22 +53,19 @@ module.exports.getUserMention = (user, parseMode) => {
  * @returns {Promise<TelegramChatMember[]>}
  */
 module.exports.getChatAdmins = async (ctx) => {
-  if (!ctx.session) {
-    ctx.session = {
-      adminChatMembers: undefined,
-      adminChatMembersMentions: undefined,
-    }
-  }
-
   /** @type {TelegramChatMember[]} */
   let adminChatMembers = ctx.session.adminChatMembers
+  // Is not cached
   if (!adminChatMembers) {
     /** @type {TelegramChatMember[]} */
     const allAdminChatMembers = await ctx.getChatAdministrators(ctx.chat.id)
     adminChatMembers = allAdminChatMembers.filter(
       (chatMember) => !chatMember.user.is_bot,
     )
+
+    // Cache this list
     ctx.session.adminChatMembers = adminChatMembers
+
     debug(
       'admins list has been updated. from_id=%s chat_id=%s',
       ctx.message.from.id,
