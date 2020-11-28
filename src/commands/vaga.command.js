@@ -1,4 +1,5 @@
 const {
+  checkIsGroup,
   checkHasReply,
   checkIsAdminMessage,
   forwardRepliedMessageTo,
@@ -16,6 +17,8 @@ const { continueOnLastMiddlewareError } = require('./helpers')
  * @param {import('./types').VagaOpts} opts
  */
 const makeMiddlewareChain = (bot, { chatIdToForwardMessages, replyMsg }) => [
+  checkIsGroup,
+
   checkHasReply,
 
   checkIsAdminMessage,
