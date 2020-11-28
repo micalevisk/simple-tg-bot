@@ -19,6 +19,11 @@ module.exports.isGroupChat = (ctx) => {
 }
 
 /**
+ * @param {import('telegraf/typings/context').TelegrafContext} ctx
+ */
+module.exports.isPrivateChat = (ctx) => ctx.chat && ctx.chat.type == 'private'
+
+/**
  *
  * @param {import('telegraf/typings/telegram-types').User} user
  * @param {import('telegraf/typings/telegram-types').ParseMode} parseMode
