@@ -45,12 +45,17 @@ const makeMiddlewareChain = (bot) => {
    * @param {() => Promise<void>} next
    */
   const replyWithAdminsMention = async (ctx, next) => {
+    const userMention = getUserMention(ctx.from, 'Markdown')
+
     const adminsMentionList = (await getChatAdmins(ctx)).map((chatMember) =>
       getUserMention(chatMember.user, 'Markdown'),
     )
-    const adminsMention = adminsMentionList.join('\n') // new-line separated
+    const adminsMention = adminsMentionList.join(',')
 
-    ctx.reply(adminsMention, confirmationMenu)
+    ctx.reply(
+      `🆘 ${userMention}, admins alertados!\n${adminsMention}`,
+      confirmationMenu,
+    )
 
     ctx.state.ok = true
     next()
