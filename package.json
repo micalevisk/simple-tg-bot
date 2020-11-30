@@ -7,8 +7,8 @@
     "// ========== development ========== //": "",
     "format": "prettier --write .",
     "start": "node .",
-    "dev": "DEBUG=simple-tg-bot* NODE_ENV=development nodemon .",
-    "debug": "DEBUG=simple-tg-bot* NODE_ENV=development nodemon --inspect=0.0.0.0 .",
+    "dev": "cross-env DEBUG=simple-tg-bot* NODE_ENV=development nodemon .",
+    "debug": "cross-env DEBUG=simple-tg-bot* NODE_ENV=development nodemon --inspect=0.0.0.0 .",
     "// ========== production ========== //": "",
     "pm2": "pm2",
     "start:prod": "pm2 start pm2.config.js --env production",
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
+    "cross-env": "^7.0.2",
     "nodemon": "^2.0.6",
     "prettier": "^2.1.2"
   }

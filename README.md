@@ -15,14 +15,14 @@
 
 ```bash
 cp .env.example .env
-vim .env # place your config values
+vim .env # place your config. values in this file
 ```
 
 ## usage
 
 ```bash
 npm ci --prod
-export DEBUG=simple-tg-bot* # to diplay logs
+export DEBUG=simple-tg-bot* # to diplay all kind of logs
 # export DEBUG=simple-tg-bot:debug
 # export DEBUG=simple-tg-bot:info
 # export DEBUG=simple-tg-bot:info
@@ -33,8 +33,17 @@ npm start
 
 ```bash
 npm i
-npm run dev
+```
 
+> If you want to use the [VS Code debug mode](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)  
+> <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> _(show Command Pallet)_ → `select and start debugging` → `Run 'npm run dev'`
+
+```bash
+# or
+npm run dev
+```
+
+```bash
 npm run format
 ```
 
