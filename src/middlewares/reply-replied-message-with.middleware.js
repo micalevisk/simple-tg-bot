@@ -23,7 +23,7 @@ module.exports = makeMiddlewareWithBotInstance((bot) => {
       const repliedMessage = ctx.message.reply_to_message
 
       try {
-        const userMention = getUserMention(ctx.from, 'HTML')
+        const userMention = getUserMention(repliedMessage.from, 'HTML')
         const text = (userMention ? `${userMention} ` : '') + msgText
         await bot.telegram.sendMessage(chatId, text, {
           reply_to_message_id: repliedMessage.message_id,
