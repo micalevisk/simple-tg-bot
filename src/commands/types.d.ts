@@ -16,3 +16,7 @@ export interface VagaOpts {
   chatIdToForwardMessages: string | number
   replyMsg: string
 }
+
+export interface JavaOpts {
+  replyMsg: string
+}

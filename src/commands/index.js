@@ -1,6 +1,6 @@
 const { walkSync } = require('./helpers')
 
-module.exports = (function importCommands() {
+function loadCommands() {
   /** @param {string} filepath */
   const isCommandModuleFile = (filepath) => filepath.endsWith('.command.js')
 
@@ -9,4 +9,6 @@ module.exports = (function importCommands() {
   ).map((commandModuleAbsFile) => require(commandModuleAbsFile))
 
   return commands
-})()
+}
+
+module.exports = loadCommands()
