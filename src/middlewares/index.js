@@ -9,5 +9,4 @@ module.exports = {
   refreshAdminsList: require('./refresh-admins-list.middleware'),
   replyRepliedMessageWith: require('./reply-replied-message-with.middleware'),
   session: require('./session.middleware'),
-  throttler: require('./throttler.middleware'),
 }

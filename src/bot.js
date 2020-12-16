@@ -1,7 +1,7 @@
 const { Telegraf } = require('telegraf')
 const { error, info } = require('./log')
 
-const { session, throttler } = require('./middlewares')
+const { session } = require('./middlewares')
 
 /**
  * @param {string} botToken
@@ -13,12 +13,10 @@ function setupTelegramBot(botToken, commandsOpts) {
   const bot = new Telegraf(botToken)
 
   bot.catch((err, ctx) => {
-    error(`oops, encountered an error for ${ctx.updateType}. err=%s`, err)
+    error(`Ooops, encountered an error for ${ctx.updateType}. err=%s`, err)
   })
 
   bot.use(session)
-
-  bot.use(throttler)
 
   // Ignore all pending `callback_query` events.
   bot.use(async function disposeCallbackQuery(ctx, next) {
