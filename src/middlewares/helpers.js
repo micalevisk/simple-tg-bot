@@ -73,7 +73,7 @@ module.exports.getChatAdmins = async (ctx) => {
 
     debug(
       'admins list has been updated. from_id=%s chat_id=%s',
-      ctx.message.from.id,
+      (ctx.message || ctx.update.callback_query).from.id,
       ctx.chat.id,
     )
   }
