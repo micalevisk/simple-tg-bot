@@ -40,6 +40,8 @@ module.exports = async (ctx, next) => {
 
       ctx.state.ok = true
       next()
+    } else {
+      await ctx.answerCbQuery('Apenas admins podem fazer isso!', true)
     }
   }
 }
