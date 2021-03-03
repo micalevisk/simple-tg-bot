@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["command"],
+  "properties": {
+    "$schema": {
+      "$id": "#/properties/%24schema",
+      "type": "string"
+    },
+    "command": {
+      "$id": "#/properties/command",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["vaga", "java"],
+      "properties": {
+        "vaga": {
+          "$id": "#/properties/command/properties/vaga",
+          "type": "object",
+          "required": ["chatIdToForwardMessages", "replyWithMsg"],
+          "additionalProperties": true,
+          "properties": {
+            "chatIdToForwardMessages": {
+              "$id": "#/properties/command/properties/vaga/properties/chatIdToForwardMessages",
+              "type": "string",
+              "title": "Chat id to forward message to."
+            },
+            "replyWithMsg": {
+              "$id": "#/properties/command/properties/vaga/properties/replyWithMsg",
+              "type": "string"
+            }
+          }
+        },
+        "java": {
+          "$id": "#/properties/command/properties/java",
+          "type": "object",
+          "required": ["replyWithMsg"],
+          "additionalProperties": true,
+          "properties": {
+            "replyWithMsg": {
+              "$id": "#/properties/command/properties/java/properties/replyWithMsg",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

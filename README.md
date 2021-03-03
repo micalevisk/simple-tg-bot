@@ -15,8 +15,13 @@
 ## setup
 
 ```bash
+git clone --depth=1 https://github.com/sistematico/simple-tg-bot
+
 cp .env.example .env
-vim .env # place your config. values in this file
+vim .env # place your bot token here
+
+cp config.json.example config.json
+vim config.json # place your configuration values in this file
 ```
 
 ## usage

@@ -1,3 +1,5 @@
+# user-specif configuration file
+config.json
 *.env
 
 logz

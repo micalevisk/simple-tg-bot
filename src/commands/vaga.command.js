@@ -26,7 +26,7 @@ const makeMiddlewareChain = (bot, opts) => [
   forwardRepliedMessageTo(bot)(opts.chatIdToForwardMessages),
   continueOnLastMiddlewareError(false),
 
-  replyRepliedMessageWith(bot)(opts.replyMsg),
+  replyRepliedMessageWith(bot)(opts.replyWithMsg),
 
   deleteRepliedMessage,
 

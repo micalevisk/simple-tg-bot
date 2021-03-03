@@ -20,7 +20,7 @@ const makeMiddlewareChain = (bot, opts) => [
 
   checkIsAdminMessage,
 
-  replyRepliedMessageWith(bot)(opts.replyMsg),
+  replyRepliedMessageWith(bot)(opts.replyWithMsg),
 
   deleteRepliedMessage,
 
