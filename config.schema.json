@@ -17,7 +17,7 @@
         "vaga": {
           "$id": "#/properties/command/properties/vaga",
           "type": "object",
-          "required": ["chatIdToForwardMessages", "replyWithMsg"],
+          "required": ["chatIdToForwardMessages", "botResponses"],
           "additionalProperties": true,
           "properties": {
             "chatIdToForwardMessages": {
@@ -25,9 +25,18 @@
               "type": "string",
               "title": "Chat id to forward message to."
             },
-            "replyWithMsg": {
-              "$id": "#/properties/command/properties/vaga/properties/replyWithMsg",
-              "type": "string"
+            "botResponses": {
+              "$id": "#/properties/command/properties/vaga/properties/botResponses",
+              "type": "array",
+              "items": {
+                "$id": "#/properties/command/properties/vaga/properties/botResponses/items",
+                "anyOf": [
+                  {
+                    "$id": "#/properties/command/properties/vaga/properties/botResponses/items/anyOf/0",
+                    "type": "string"
+                  }
+                ]
+              }
             }
           }
         },

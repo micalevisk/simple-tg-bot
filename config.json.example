@@ -3,8 +3,11 @@
 
   "command": {
     "vaga": {
-      "chatIdToForwardMessage": "@javascriptbrvagas",
-      "replyWithMsg": "sua msg encaminhada pro canal @javascriptbrvagas 👍"
+      "chatIdToForwardMessages": "@specialdude",
+      "botResponses": [
+        "sua msg encaminhada pro canal @javascriptbrvagas 👍",
+        "msg encaminhada pro canal @javascriptbrvagas 🥰"
+      ]
     },
     "java": {
       "replyWithMsg": "Java <b>nao é</b> JavaScript. Use este outro grupo: https://t.me/javabr"

@@ -14,7 +14,7 @@ export interface CommandDefinition {
 
 export interface VagaOpts {
   chatIdToForwardMessages: string | number
-  replyWithMsg: string
+  botResponses: string[]
 }
 
 export interface JavaOpts {

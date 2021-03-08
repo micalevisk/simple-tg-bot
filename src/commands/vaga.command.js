@@ -7,6 +7,7 @@ const {
   deleteRepliedMessage,
   deleteMessage,
 } = require('../middlewares')
+const { pickRandomItem } = require('../utils')
 
 const { continueOnLastMiddlewareError } = require('./helpers')
 
@@ -16,22 +17,26 @@ const { continueOnLastMiddlewareError } = require('./helpers')
  * @param {Bot} bot
  * @param {import('./types').VagaOpts} opts
  */
-const makeMiddlewareChain = (bot, opts) => [
-  checkIsGroup,
+const makeMiddlewareChain = (bot, opts) => {
+  const responseMsg = pickRandomItem(opts.botResponses)
 
-  checkHasReply,
+  return [
+    checkIsGroup,
 
-  checkIsAdminMessage,
+    checkHasReply,
 
-  forwardRepliedMessageTo(bot)(opts.chatIdToForwardMessages),
-  continueOnLastMiddlewareError(false),
+    checkIsAdminMessage,
 
-  replyRepliedMessageWith(bot)(opts.replyWithMsg),
+    forwardRepliedMessageTo(bot)(opts.chatIdToForwardMessages),
+    continueOnLastMiddlewareError(false),
 
-  deleteRepliedMessage,
+    replyRepliedMessageWith(bot)(responseMsg),
 
-  deleteMessage,
-]
+    deleteRepliedMessage,
+
+    deleteMessage,
+  ]
+}
 
 /** @type {import('./types').CommandDefinition} */
 module.exports = {
