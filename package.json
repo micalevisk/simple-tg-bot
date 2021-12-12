@@ -33,7 +33,6 @@
     "ajv": "^7.1.1",
     "debug": "^4.3.1",
     "dotenv": "^8.2.0",
-    "pm2": "^4.5.5",
     "telegraf": "^3.38.0"
   },
   "devDependencies": {
