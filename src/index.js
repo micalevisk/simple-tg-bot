@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 const botConfig = require('./bot-config')
 const { info } = require('./log')
 
