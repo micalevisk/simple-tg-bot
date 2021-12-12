@@ -1,7 +1,5 @@
 # simple-tg-bot
 
-![CD](https://github.com/sistematico/simple-tg-bot/workflows/Continuous%20deploy/badge.svg?event=push)
-
 ## Bot available commands
 
 | how                                         | what                                                                                                                                                                                 | who      |
@@ -51,17 +49,4 @@ npm run dev
 
 ```bash
 npm run format
-```
-
-## production usage
-
-```bash
-cp .production.deploy.env.example .production.deploy.env
-vim .production.deploy.env # configure your production server
-
-vim pm2.config.js # configure your Git repository
-
-# Make your first deploy and populate the distant path
-npm run deploy setup
-##             ^^^^^ remove this for further deployments
 ```
