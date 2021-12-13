@@ -17,5 +17,6 @@ if (!isValidConfigFile) {
 
 module.exports = {
   token: TELEGRAM_BOT_TOKEN,
+  // @ts-ignore
   ...config,
 }

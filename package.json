@@ -4,20 +4,12 @@
   "version": "1.4.0",
   "main": "src/index.js",
   "scripts": {
-    "// ========== development ========== //": "",
-    "format": "prettier --write .",
+    "// ========================== production ========================== //": "",
     "start": "node .",
-    "dev": "cross-env DEBUG=simple-tg-bot* NODE_ENV=development nodemon .",
-    "debug": "cross-env DEBUG=simple-tg-bot* NODE_ENV=development nodemon --inspect=0.0.0.0 .",
-    "// ========== production ========== //": "",
-    "pm2": "pm2",
-    "start:prod": "pm2 start pm2.config.js --env production",
-    "logs": "pm2 logs 'telegram bot'",
-    "rs": "pm2 restart pm2.config.js",
-    "status": "pm2 status pm2.config.js",
-    "stop": "pm2 stop pm2.config.js",
-    "delete": "pm2 delete pm2.config.js",
-    "deploy": "pm2 deploy pm2.config.js production"
+    "// ========================== development ========================= //": "",
+    "format": "prettier --write .",
+    "dev": "cross-env DEBUG=simple-tg-bot* NODE_ENV=development nodemon --require dotenv/config .",
+    "debug": "cross-env DEBUG=simple-tg-bot* NODE_ENV=development nodemon --require dotenv/config --inspect=0.0.0.0 ."
   },
   "repository": {
     "type": "git",
@@ -30,16 +22,16 @@
   },
   "homepage": "https://github.com/sistematico/simple-tg-bot#README",
   "dependencies": {
-    "ajv": "^7.1.1",
-    "debug": "^4.3.1",
-    "dotenv": "^8.2.0",
-    "pm2": "^4.5.5",
-    "telegraf": "^3.38.0"
+    "ajv": "^8.8.2",
+    "debug": "^4.3.3",
+    "telegraf": "^3"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
+    "@types/node": "^16.11.12",
     "cross-env": "^7.0.3",
-    "nodemon": "^2.0.7",
-    "prettier": "^2.2.1"
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
   }
 }

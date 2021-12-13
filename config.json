@@ -1,0 +1,15 @@
+{
+  "$schema": "./config.schema.json",
+  "command": {
+    "vaga": {
+      "chatIdToForwardMessages": "@javascriptbr",
+      "botResponses": [
+        "sua msg encaminhada pro canal @javascriptbrvagas 👍",
+        "🥰 msg encaminhada pro canal @javascriptbrvagas"
+      ]
+    },
+    "java": {
+      "replyWithMsg": "Java <b>nao é</b> JavaScript. Use https://t.me/javabr ou https://t.me/java_br ou https://t.me/soujavabr"
+    }
+  }
+}
