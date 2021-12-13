@@ -2,7 +2,7 @@
   "$schema": "./config.schema.json",
   "command": {
     "vaga": {
-      "chatIdToForwardMessages": "@javascriptbr",
+      "chatIdToForwardMessages": "@javascriptbrvagas",
       "botResponses": [
         "sua msg encaminhada pro canal @javascriptbrvagas 👍",
         "🥰 msg encaminhada pro canal @javascriptbrvagas"
