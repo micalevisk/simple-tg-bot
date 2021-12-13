@@ -16,10 +16,10 @@
 git clone --depth=1 https://github.com/sistematico/simple-tg-bot
 
 cp .env.example .env
-vim .env # place your bot token here
+vim .env # add your telegram bot token here
 
-cp config.json.example config.json
-vim config.json # place your configuration values in this file
+# Configuration your bot with this file
+vim config.json
 ```
 
 ## usage
@@ -30,13 +30,14 @@ export DEBUG=simple-tg-bot* # to diplay all kind of logs
 # export DEBUG=simple-tg-bot:debug
 # export DEBUG=simple-tg-bot:info
 # export DEBUG=simple-tg-bot:info
+export TELEGRAM_BOT_TOKEN="YOUR--TOKEN--HERE"
 npm start
 ```
 
 ## development usage
 
 ```bash
-npm i
+npm install
 ```
 
 > If you want to use the [VS Code debug mode](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)  
