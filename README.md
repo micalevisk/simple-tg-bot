@@ -13,12 +13,13 @@
 ## setup
 
 ```bash
-git clone --depth=1 https://github.com/sistematico/simple-tg-bot
+git clone https://github.com/sistematico/simple-tg-bot
 
 cp .env.example .env
-vim .env # add your telegram bot token here
+# Add your private Telegram bot token here
+vim .env
 
-# Configuration your bot with this file
+# Configure your bot
 vim config.json
 ```
 
