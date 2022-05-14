@@ -33,7 +33,7 @@ jobs:
           justlogin: true
       - name: Scale one worker if isn't up already
         run: |
-          [[ $(heroku ps --app $APP_NAME | grep -w "worker.1: up") ]] ||
-          heroku ps:scale worker=1 --app ${{ secrets.HEROKU_API_KEY }}
+          [[ $(heroku ps --app ${{ secrets.HEROKU_APP_NAME }} | grep -w "worker.1: up") ]] ||
+          heroku ps:scale worker=1 --app ${{ secrets.HEROKU_APP_NAME }}
       - name: Write report
         run: 'echo "### ${{ steps.hd.outputs.status }}" >> $GITHUB_STEP_SUMMARY'
