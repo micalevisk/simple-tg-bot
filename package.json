@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sistematico/simple-tg-bot.git"
+    "url": "git+https://github.com/micalevisk/simple-tg-bot.git"
   },
   "author": "Micael Levi L. Cavalcante (https://micalevisk.github.io)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sistematico/simple-tg-bot/issues"
+    "url": "https://github.com/micalevisk/simple-tg-bot/issues"
   },
-  "homepage": "https://github.com/sistematico/simple-tg-bot#README",
+  "homepage": "https://github.com/micalevisk/simple-tg-bot#README",
   "dependencies": {
     "ajv": "^8.8.2",
     "debug": "^4.3.3",
