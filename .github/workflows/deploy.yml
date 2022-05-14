@@ -1,0 +1,39 @@
+name: Deploy to Heroku
+
+on:
+  ## Allow triggering this workflow manually via GitHub CLI/web
+  workflow_dispatch:
+
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v3
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_USER_EMAIL }}
+          procfile: 'worker: node .'
+        env:
+          ## The following will be uploaded as config variables for the Heroku
+          ## application without the prefix `HD_` (Heroku Deploy)
+          HD_TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          HD_DEBUG: 'simple-tg-bot*'
+      - name: Logs-in into Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_email: ${{ secrets.HEROKU_USER_EMAIL }}
+          justlogin: true
+      - name: Scale one worker if isn't up already
+        run: |
+          [[ $(heroku ps --app $APP_NAME | grep -w "worker.1: up") ]] ||
+          heroku ps:scale worker=1 --app ${{ secrets.HEROKU_API_KEY }}
+      - name: Write report
+        run: 'echo "### ${{ steps.hd.outputs.status }}" >> $GITHUB_STEP_SUMMARY'
