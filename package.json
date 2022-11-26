@@ -6,6 +6,11 @@
   "scripts": {
     "// ========================== production ========================== //": "",
     "start": "node .",
+    "// ============================ Fly.io ============================ //": "",
+    "logs": "flyctl logs",
+    "status": "flyctl status",
+    "deploy": "flyctl deploy",
+    "app-secrets": "flyctl secrets list",
     "// ========================== development ========================= //": "",
     "format": "prettier --write .",
     "dev": "cross-env DEBUG=simple-tg-bot* NODE_ENV=development nodemon --require dotenv/config .",
